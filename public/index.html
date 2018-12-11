@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <main>
+            <form method="POST" onsubmit="return openUrl()">
+                <input id="urlToOpen" name="urlToOpen" type="text" placeholder="url to open">
+                <button type="submit">open</button>
+            </form>
+        </main>
+    </body>
+    <script>
+        function openUrl() {
+            const inputEl = document.getElementById('urlToOpen')
+
+            // const host = 'localhost'
+            // const host = 'panther.bar'
+            const host = window.location.host
+
+            const data = {
+                url: inputEl.value
+            }
+
+            fetch(`http://${host}/open-url`, {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+
+            return false;
+        }
+    </script>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "operandi",
+  "version": "1.0.0",
+  "description": "send something to big screen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Progressbar/operandi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Progressbar/operandi/issues"
+  },
+  "homepage": "https://github.com/Progressbar/operandi#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "opn": "^5.4.0"
+  }
+}
