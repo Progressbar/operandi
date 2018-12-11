@@ -1,6 +1,6 @@
 <html>
     <head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <main>
@@ -14,15 +14,11 @@
         function openUrl() {
             const inputEl = document.getElementById('urlToOpen')
 
-            // const host = 'localhost'
-            // const host = 'panther.bar'
-            const host = window.location.host
-
             const data = {
                 url: inputEl.value
             }
 
-            fetch(`http://${host}/open-url`, {
+            fetch(`http://${window.location.host}/open-url`, {
                 method: 'post',
                 headers: {
                     'Accept': 'application/json',
@@ -31,7 +27,7 @@
                 body: JSON.stringify(data)
             })
 
-            return false;
+            return false
         }
     </script>
 </html>

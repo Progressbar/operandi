@@ -1,6 +1,7 @@
 const opn = require('opn')
 const express = require('express')
 const path = require('path')
+const normalizeUrl = require('normalize-url')
 
 const app = new express()
 const port = 80
@@ -12,9 +13,7 @@ app.use(express.json())
 app.post('/open-url', (req, res) => {
     const { body } = req
     const { url } = body
-    
-    opn(url)
-
+    opn(normalizeUrl(url))
     res.sendStatus(200)
 })
 
